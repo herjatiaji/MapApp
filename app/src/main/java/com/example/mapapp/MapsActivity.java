@@ -22,6 +22,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
@@ -88,7 +90,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
                 map.addMarker(new MarkerOptions().position(latLng).snippet(text)
-                        .title("Dropped pin"));
+                        .title("Dropped pin").icon(BitmapDescriptorFactory.fromResource(R.drawable.otwbang)));
 
             }
         });
@@ -99,7 +101,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onPoiClick(@NonNull PointOfInterest pointOfInterest) {
                 Marker poiMarker = mMap.addMarker(new MarkerOptions().
-                        position(pointOfInterest.latLng).title(pointOfInterest.name));
+                        position(pointOfInterest.latLng).title(pointOfInterest.name).icon(BitmapDescriptorFactory.fromResource(R.drawable.demikian)));
                 poiMarker.showInfoWindow();
             }
         });
